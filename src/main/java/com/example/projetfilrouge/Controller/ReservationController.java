@@ -101,9 +101,7 @@ public class ReservationController {
             String subject = "Reservation Norkar!";
             String text = "Nous sommes heureux de vous annoncer que la reservation au nom ".concat(reservation.getNomReservation())
                     .concat(" est effectuer. L'heure de reservation est ")
-                    .concat(reservation.getHeureReservation().toString()).concat(" le ")
-                    .concat(reservation.getDateReservation().toString()).concat(" jusqu'a ")
-                    .concat(reservation.getHeureFin().toString())
+                    .concat(reservation.getHeureReservation().toString()).concat(" le").concat(reservation.getDateReservation().toString())
                     ;
             emailService.sendEmail(user.getUtilisateur().getEmail(),subject, text);
         } catch (MessagingException e) {
